@@ -1,20 +1,2 @@
 <h1>Here is where the draw takes place</h1>
 <p>Need to therefore configure pages controller home</p>
-
-<h3>Participants</h3>
-<% @participants.each do |participant| %>
-<ul>
-  <li>
-    <h5>participant.name</h5>
-    <p>participant.email</p>
-  </li>
-</ul>
-<% end %>
-
-<h4>Add a participant</h4>
-<%= simple_form_for @participant do |f|  %>
-<%= f.input :name, placeholder: 'Participant name' %>
-<%= f.input :email, placeholder: 'user@domain.com' %>
-<%= f.submit %>
-<% end %>
-
