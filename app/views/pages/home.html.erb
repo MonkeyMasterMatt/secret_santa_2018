@@ -1,2 +1,15 @@
 <h1>Here is where the draw takes place</h1>
 <p>Need to therefore configure pages controller home</p>
+
+<h3>Participants</h3>
+<ul>
+  <li>Participant 1</li>
+  <li>Participant 2</li>
+</ul>
+
+<h4>Add a participant</h4>
+<%= simple_form for [@user] do |user|  %>
+<%= f.input %>
+<%= f.submit %>
+<% end %>
+
