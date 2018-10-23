@@ -1,0 +1,13 @@
+
+<h3>Participants</h3>
+<ul>
+  <% @participants.each do |participant| %>
+  <li>
+    <h5><%= participant.name %></h5>
+    <p><%= participant.email %></p>
+  </li>
+  <% end %>
+</ul>
+
+<h4>Add a participant</h4>
+<%= render 'add-participant', participant: @participant %>
