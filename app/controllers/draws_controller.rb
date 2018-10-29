@@ -25,7 +25,11 @@ class DrawsController < ApplicationController
   end
 
   def update
-    @draw.update
+    if @draw.update(draw_params)
+      redirect_to '/'
+    else
+      render :edit
+    end
   end
 
   def destroy
