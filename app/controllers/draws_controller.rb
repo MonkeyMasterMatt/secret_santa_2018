@@ -1,5 +1,5 @@
 class DrawsController < ApplicationController
-    skip_before_action :set_draw, only: [:show, :edit, :update, :destroy]
+    before_action :set_draw, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -13,8 +13,12 @@ class DrawsController < ApplicationController
 
   def create
     @draw = Draw.new(draw_params)
-    @draw.creator = current_user
-    @draw.save
+    # @draw.creator = current_user
+    if @draw.save
+      redirect_to '/'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -34,7 +38,7 @@ class DrawsController < ApplicationController
   end
 
   def draw_params
-    params.require(:draw).permits(:title, :description)
+    params.require(:draw).permit(:title, :description)
   end
 
 end
