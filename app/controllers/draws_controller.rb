@@ -2,7 +2,6 @@ class DrawsController < ApplicationController
     skip_before_action :set_draw, only: [:show, :edit, :update, :destroy]
 
   def index
-    @draws = Draw.all
   end
 
   def show

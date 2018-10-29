@@ -1,0 +1,9 @@
+<h1>All my Draws</h1>
+<ul>
+  <% @draws.each do |draw| %>
+  <li>
+    <h3><%= draw.title %></h3>
+    <p><%= draw.description %></p>
+  </li>
+  <% end %>
+</ul>
