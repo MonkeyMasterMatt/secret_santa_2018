@@ -15,7 +15,7 @@ class DrawsController < ApplicationController
     @draw = Draw.new(draw_params)
     # @draw.creator = current_user
     if @draw.save
-      redirect_to '/'
+      redirect_to root_path
     else
       render :new
     end
@@ -33,6 +33,8 @@ class DrawsController < ApplicationController
   end
 
   def destroy
+    @draw.delete
+    redirect_to root_path
   end
 
   private

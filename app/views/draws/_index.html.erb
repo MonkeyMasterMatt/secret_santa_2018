@@ -8,6 +8,8 @@
       <i class="fas fa-pen"></i>
       <p>Edit my draw</p>
     <% end %>
+    <%= link_to 'Delete my draw',  draw_path(draw),
+    data: { confirm: 'Are you sure?' }, method: :delete %>
   </li>
   <% end %>
 </ul>
