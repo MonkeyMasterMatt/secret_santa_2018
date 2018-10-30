@@ -1,0 +1,11 @@
+<h1>Create a new draw</h1>
+
+<%= simple_form_for(@draw) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to root_path do %>
+  <p>Cancel</p>
+<% end %>

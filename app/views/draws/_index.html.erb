@@ -1,0 +1,15 @@
+<h1>All my Draws</h1>
+<ul>
+  <% @draws.each do |draw| %>
+  <li>
+    <h3><%= draw.title %></h3>
+    <p><%= draw.description %></p>
+    <%= link_to edit_draw_path(draw) do %>
+      <i class="fas fa-pen"></i>
+      <p>Edit my draw</p>
+    <% end %>
+    <%= link_to 'Delete my draw',  draw_path(draw),
+    data: { confirm: 'Are you sure?' }, method: :delete %>
+  </li>
+  <% end %>
+</ul>
